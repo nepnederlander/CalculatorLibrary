@@ -1,2 +1,2 @@
 # CalculatorLibrary
-First CI Python / Jenkins Project
+First CI Python / CircleCI Project
