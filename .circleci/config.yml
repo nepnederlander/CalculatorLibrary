@@ -25,6 +25,16 @@ jobs:
             flake8 --exclude=venv* --statistics
             pytest -v --cov=calculator
       
-      # Step 4 : store test results
+      # Step 4 : store pytest test results
+      - run:
+          name: run tests
+          command: |
+            . venv/bin/activate
+            mkdir test-results
+            pytest --junitxml=test-results/junit.xml
+
       - store_test_results:
-          path: /tmp/test-results
+          path: test-results
+
+      - store_artifacts:
+          path: test-results
