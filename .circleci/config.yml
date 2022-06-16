@@ -38,3 +38,8 @@ jobs:
 
       - store_artifacts:
           path: test-results
+
+workflows:
+  build-workflow:
+    jobs:
+      - build
